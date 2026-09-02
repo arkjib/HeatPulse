@@ -159,7 +159,7 @@ export default function App() {
   let alertPeak = '--';
   let alertDriver = 'UTCI';
   let alertColorClass = 'text-green-500';
-  let alertBgClass = 'bg-[#121827]/90 border-green-500/30';
+  let alertBgClass = 'bg-[#1a0505]/90 border-green-500/30';
   
   if (Array.isArray(riskData) && riskData.length > 0) {
     let worstRiskStr = 'LOW';
@@ -247,7 +247,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-screen bg-[#070b14] text-neutral-200 font-sans overflow-hidden">
+    <div className="flex h-screen bg-[#110000] text-neutral-200 font-sans overflow-hidden">
       
       {/* 3D Background */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen">
@@ -258,18 +258,18 @@ export default function App() {
       </div>
 
       {/* Sidebar */}
-      <aside className="w-64 bg-[#0a0f1c]/90 backdrop-blur-xl border-r border-white/10 flex flex-col z-10">
+      <aside className="w-64 bg-[#110000]/90 backdrop-blur-xl border-r border-white/10 flex flex-col z-10">
         <div className="p-6">
           <div className="flex items-center gap-3 text-white mb-2">
-            <Activity className="w-6 h-6 text-green-400" />
+            <Activity className="w-6 h-6 text-[#ad0007]" />
             <h1 className="text-xl font-bold tracking-wide">HeatPulse</h1>
           </div>
           <p className="text-[10px] text-neutral-400 uppercase tracking-widest">Extreme Heat. Early Warning.</p>
         </div>
         
         <nav className="flex-1 px-4 space-y-2 mt-4">
-          <button className="w-full flex items-center gap-3 px-4 py-3 bg-green-500/10 text-green-400 rounded-xl border border-green-500/20 font-medium">
-            <div className="w-4 h-4 bg-green-400 rounded-sm" /> Dashboard
+          <button className="w-full flex items-center gap-3 px-4 py-3 bg-[#a80000]/10 text-[#ad0007] rounded-xl border border-[#a80000]/20 font-medium">
+            <div className="w-4 h-4 bg-[#ad0007] rounded-sm" /> Dashboard
           </button>
           {['Forecast', 'History', 'Alerts', 'About'].map(item => (
             <button key={item} className="w-full flex items-center gap-3 px-4 py-3 text-neutral-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
@@ -279,13 +279,13 @@ export default function App() {
         </nav>
 
         <div className="p-4 m-4 bg-white/5 border border-white/10 rounded-2xl">
-          <h4 className="text-sm font-semibold text-green-400 mb-2">About HeatPulse</h4>
+          <h4 className="text-sm font-semibold text-[#ad0007] mb-2">About HeatPulse</h4>
           <p className="text-xs text-neutral-400 leading-relaxed">
             AI-powered early warning system for extreme heat and human thermal stress.
           </p>
           <div className="mt-4 flex justify-end">
-            <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
-              <span className="text-green-400 text-xs">🌿</span>
+            <div className="w-8 h-8 rounded-full bg-[#a80000]/20 flex items-center justify-center">
+              <span className="text-[#ad0007] text-xs">🔥</span>
             </div>
           </div>
         </div>
@@ -296,7 +296,7 @@ export default function App() {
         {/* Header */}
         <header className="px-8 py-5 flex items-center justify-between border-b border-white/5 bg-black/20 backdrop-blur-md">
           <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-green-400" />
+            <MapPin className="w-5 h-5 text-[#ad0007]" />
             <div>
               <h2 className="text-base font-bold text-white tracking-wide">Kochi, Kerala, India</h2>
               <p className="text-xs text-neutral-400 font-mono">9.9312° N, 76.2673° E</p>
@@ -316,7 +316,7 @@ export default function App() {
               <button 
                 onClick={fetchData}
                 disabled={isLoading}
-                className="flex items-center gap-2 px-4 py-1.5 bg-green-500/20 hover:bg-green-500/30 text-green-400 text-xs font-semibold rounded-full border border-green-500/30 transition-all disabled:opacity-50"
+                className="flex items-center gap-2 px-4 py-1.5 bg-[#a80000]/20 hover:bg-[#a80000]/30 text-[#ad0007] text-xs font-semibold rounded-full border border-[#a80000]/30 transition-all disabled:opacity-50"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
                 Refresh
@@ -333,7 +333,7 @@ export default function App() {
           <div className="col-span-8 space-y-6">
             
             {/* OVERALL HEAT RISK */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 flex items-center justify-between shadow-2xl">
+            <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 flex items-center justify-between shadow-2xl">
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 rounded-full bg-orange-500/20 border-2 border-orange-500/50 flex items-center justify-center">
                   <Thermometer className="w-8 h-8 text-orange-500" />
@@ -364,7 +364,7 @@ export default function App() {
             {/* THREE CARDS (REAL-TIME LIVE DATA) */}
             <div className="grid grid-cols-3 gap-6">
               {[
-                { title: 'WBGT', key: 'wbgt', icon: Thermometer, color: 'text-green-400' },
+                { title: 'WBGT', key: 'wbgt', icon: Thermometer, color: 'text-[#ad0007]' },
                 { title: 'UTCI', key: 'utci', icon: Activity, color: 'text-orange-500' },
                 { title: 'HEAT INDEX', key: 'heat_index', icon: Flame, color: 'text-yellow-400' }
               ].map(idx => {
@@ -384,7 +384,7 @@ export default function App() {
                 const methodStr = live?.method ? (live.method.length > 25 ? live.method.substring(0, 22) + '...' : live.method) : 'Physics Engine';
 
                 return (
-                  <div key={idx.title} className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-5 flex flex-col justify-between h-48">
+                  <div key={idx.title} className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-5 flex flex-col justify-between h-48">
                     <div className="flex justify-between items-start">
                       <div className="flex items-center gap-3">
                         <div className={`p-2 rounded-full bg-white/5 border border-white/10 ${idx.color}`}>
@@ -392,7 +392,7 @@ export default function App() {
                         </div>
                         <div>
                           <p className="text-xs font-semibold text-neutral-400 tracking-wide flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> LIVE {idx.title}
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#ad0007] animate-pulse" /> LIVE {idx.title}
                           </p>
                           <p className="text-2xl font-bold text-white mt-1">{val} <span className="text-sm text-neutral-500">°C</span></p>
                         </div>
@@ -404,7 +404,7 @@ export default function App() {
                     <p className="text-xs text-neutral-400 mt-3 capitalize">{desc}</p>
                     <div className="mt-4 pt-4 border-t border-white/5 text-[10px] text-neutral-500 flex flex-col gap-1">
                       <p>Method: {methodStr}</p>
-                      <p className="text-emerald-500/70">Real-time Weather Assimilation</p>
+                      <p className="text-red-500/70">Real-time Weather Assimilation</p>
                     </div>
                   </div>
                 );
@@ -415,7 +415,7 @@ export default function App() {
             <div className="grid grid-cols-3 gap-6">
               
               {/* CHART */}
-              <div className="col-span-2 bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+              <div className="col-span-2 bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="text-sm font-bold text-white uppercase tracking-wide">Kochi Forecast</h3>
                   <div className="flex gap-2 bg-black/40 p-1 rounded-lg border border-white/10">
@@ -423,7 +423,7 @@ export default function App() {
                       <button 
                         key={h}
                         onClick={() => setSelectedHorizon(h)}
-                        className={`px-3 py-1 text-xs font-semibold rounded-md transition-colors ${selectedHorizon === h ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'text-neutral-500 hover:text-white'}`}
+                        className={`px-3 py-1 text-xs font-semibold rounded-md transition-colors ${selectedHorizon === h ? 'bg-[#a80000]/20 text-[#ad0007] border border-[#a80000]/30' : 'text-neutral-500 hover:text-white'}`}
                       >
                         {h}h
                       </button>
@@ -442,7 +442,7 @@ export default function App() {
                         itemStyle={{ fontWeight: 'bold' }}
                       />
                       <Legend iconType="circle" wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
-                      <Line type="monotone" dataKey="WBGT" stroke="#4ade80" strokeWidth={2} dot={{ r: 3, fill: '#4ade80' }} />
+                      <Line type="monotone" dataKey="WBGT" stroke="#ad0007" strokeWidth={2} dot={{ r: 3, fill: '#ad0007' }} />
                       <Line type="monotone" dataKey="UTCI" stroke="#f97316" strokeWidth={2} dot={{ r: 3, fill: '#f97316' }} />
                       <Line type="monotone" dataKey="HeatIndex" name="Heat Index" stroke="#facc15" strokeWidth={2} dot={{ r: 3, fill: '#facc15' }} />
                     </LineChart>
@@ -452,7 +452,7 @@ export default function App() {
               </div>
 
               {/* TIMELINE */}
-              <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative">
+              <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative">
                 <h3 className="text-sm font-bold text-white uppercase tracking-wide mb-6">Risk Timeline <span className="text-neutral-500 normal-case font-normal">(Next {selectedHorizon} Hours)</span></h3>
                 <div className="relative pl-2 h-[200px] flex flex-col justify-between">
                   <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-white/10" />
@@ -492,7 +492,7 @@ export default function App() {
             </div>
 
             {/* BOTTOM DIAGRAM */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+            <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
               <h3 className="text-sm font-bold text-white uppercase tracking-wide mb-6">How HeatPulse Works</h3>
               <div className="flex justify-between items-start gap-4">
                 {[
@@ -548,7 +548,7 @@ export default function App() {
             </div>
 
             {/* HUMAN HEALTH IMPACT */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+            <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
               <div className="flex items-center gap-2 mb-4 text-purple-400">
                 <Activity className="w-5 h-5" />
                 <h3 className="text-sm font-bold tracking-widest uppercase">Estimated Health Risk</h3>
@@ -565,13 +565,13 @@ export default function App() {
                 </div>
                 <div>
                   <p className="text-neutral-400 text-[10px] uppercase font-bold tracking-wider mb-1">Recommended Action</p>
-                  <p className="text-sm text-emerald-400 leading-relaxed font-semibold">{recommendations}</p>
+                  <p className="text-sm text-[#ad0007] leading-relaxed font-semibold">{recommendations}</p>
                 </div>
               </div>
             </div>
 
             {/* CURRENT WEATHER */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+            <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
               <h3 className="text-sm font-bold text-white uppercase tracking-wide mb-5">Current Weather <span className="text-neutral-500 normal-case font-normal">(Input to Model)</span></h3>
               
               <div className="space-y-3">
@@ -599,8 +599,8 @@ export default function App() {
               <p className="text-[10px] text-neutral-500 mt-5 pt-3 border-t border-white/5">Source: Open-Meteo</p>
             </div>
             {/* THERMAL PHYSICS ENGINE */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-              <div className="flex items-center gap-2 mb-4 text-emerald-400">
+            <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+              <div className="flex items-center gap-2 mb-4 text-[#ad0007]">
                 <Activity className="w-5 h-5" />
                 <h3 className="text-sm font-bold tracking-widest uppercase">Thermal Engine</h3>
               </div>
@@ -631,8 +631,8 @@ export default function App() {
             </div>
 
             {/* MODEL INFO */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-              <h3 className="text-sm font-bold text-green-400 uppercase tracking-wide mb-4">Model Information</h3>
+            <div className="bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+              <h3 className="text-sm font-bold text-[#ad0007] uppercase tracking-wide mb-4">Model Information</h3>
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between"><span className="text-neutral-500">Models</span><span className="text-white">Ridge, Random Forest</span></div>
                 <div className="flex justify-between"><span className="text-neutral-500">Indices</span><span className="text-white">WBGT, UTCI, Heat Index</span></div>
@@ -641,17 +641,17 @@ export default function App() {
                 <div className="flex justify-between"><span className="text-neutral-500">Test Period</span><span className="text-white">08 Feb 2025 - 27 Jun 2026</span></div>
                 <div className="flex justify-between"><span className="text-neutral-500">Test Samples</span><span className="text-white">1,172 observations</span></div>
               </div>
-              <div className="mt-4 p-3 rounded-xl bg-green-500/10 border border-green-500/20 text-[10px] text-green-300">
+              <div className="mt-4 p-3 rounded-xl bg-[#a80000]/10 border border-[#a80000]/20 text-[10px] text-red-400">
                 "Model performance has been evaluated on unseen Kochi/ERA5 data and may not generalize to other locations."
               </div>
             </div>
 
             {/* KOCHI MAP & WARD TABLE */}
-            <div className="col-span-12 bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+            <div className="col-span-12 bg-[#1a0505]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-sm font-bold text-white uppercase tracking-wide">Ward-Level Vulnerability & Impact</h3>
-                <span className="text-[10px] text-green-400 font-bold tracking-wider uppercase flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> {wardsData?.length || 0} Wards Loaded
+                <span className="text-[10px] text-[#ad0007] font-bold tracking-wider uppercase flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a80000] animate-pulse" /> {wardsData?.length || 0} Wards Loaded
                 </span>
               </div>
               <div className="w-full h-48 rounded-xl bg-black/50 border border-white/5 relative overflow-hidden mb-4">
