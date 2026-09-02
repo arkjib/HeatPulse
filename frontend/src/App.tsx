@@ -517,6 +517,69 @@ export default function App() {
 
           </div>
 
+            {/* KOCHI MAP & WARD TABLE */}
+            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-sm font-bold text-white uppercase tracking-wide">Ward-Level Vulnerability & Impact</h3>
+                <span className="text-[10px] text-green-400 font-bold tracking-wider uppercase flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> {wardsData?.length || 0} Wards Loaded
+                </span>
+              </div>
+              <div className="w-full h-48 rounded-xl bg-black/50 border border-white/5 relative overflow-hidden mb-4">
+                <MapContainer center={[9.96, 76.31]} zoom={11} style={{ height: '100%', width: '100%', backgroundColor: '#02050b' }} zoomControl={false}>
+                  <TileLayer
+                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?api_key=cb1_2p2f_1_9616035ff449cee0877c0c56"
+                    attribution='&copy; <a href="https://carto.com/">CARTO</a>'
+                  />
+                  {wardsData?.map(w => {
+                     const color = getRiskColor(w.risk?.today?.overall || 'LOW');
+                     const hex = color.includes('red') ? '#ef4444' : color.includes('orange') ? '#f97316' : color.includes('amber') || color.includes('yellow') ? '#facc15' : '#4ade80';
+                     return <CircleMarker key={w.ward_no} center={[w.latitude, w.longitude]} radius={6} pathOptions={{ color: hex, fillColor: hex, fillOpacity: 0.6, stroke: false }} />;
+                  })}
+                </MapContainer>
+              </div>
+              
+              <div className="overflow-x-auto overflow-y-auto max-h-64 rounded-lg border border-white/5">
+                <table className="w-full text-left text-[10px] text-neutral-300">
+                  <thead className="text-[9px] uppercase bg-black/40 text-neutral-400 sticky top-0 z-10">
+                    <tr>
+                      <th className="px-2 py-2">Ward No</th>
+                      <th className="px-2 py-2">Ward Name</th>
+                      <th className="px-2 py-2">Temperature</th>
+                      <th className="px-2 py-2">Feels Like</th>
+                      <th className="px-2 py-2">Humidity</th>
+                      <th className="px-2 py-2">Wind</th>
+                      <th className="px-2 py-2">Rain</th>
+                      <th className="px-2 py-2">Weather</th>
+                      <th className="px-2 py-2">WBGT</th>
+                      <th className="px-2 py-2">UTCI</th>
+                      <th className="px-2 py-2">Heat Index</th>
+                      <th className="px-2 py-2">Risk</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {wardsData?.map(w => (
+                      <tr key={w.ward_no} className="border-b border-white/5 hover:bg-white/5">
+                        <td className="px-2 py-2 font-bold text-white whitespace-nowrap">{w.ward_no}</td>
+                        <td className="px-2 py-2 font-bold text-white whitespace-nowrap">{w.ward_name}</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.temperature_max_c} °C</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.apparent_temperature_mean_c} °C</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.humidity_mean_percent}%</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.wind_speed_mean_kmh} km/h</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.precipitation_sum_mm} mm</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.weather_condition}</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.heat_stress?.today?.wbgt?.prediction_c?.toFixed(1) ?? '--'}</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.heat_stress?.today?.utci?.prediction_c?.toFixed(1) ?? '--'}</td>
+                        <td className="px-2 py-2 whitespace-nowrap">{w.heat_stress?.today?.heat_index?.prediction_c !== null ? w.heat_stress?.today?.heat_index?.prediction_c?.toFixed(1) : 'N/A'}</td>
+                        <td className="px-2 py-2 whitespace-nowrap"><span className={`px-1.5 py-0.5 rounded font-bold border ${getRiskColor(w.risk?.today?.overall)}`}>{w.risk?.today?.overall?.replace('_',' ') || 'UNKNOWN'}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
           {/* Right Column (Span 4) */}
           <div className="col-span-4 space-y-6">
             
@@ -598,69 +661,6 @@ export default function App() {
               </div>
               <p className="text-[10px] text-neutral-500 mt-5 pt-3 border-t border-white/5">Source: Open-Meteo</p>
             </div>
-
-            {/* KOCHI MAP & WARD TABLE */}
-            <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-sm font-bold text-white uppercase tracking-wide">Ward-Level Vulnerability & Impact</h3>
-                <span className="text-[10px] text-green-400 font-bold tracking-wider uppercase flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> {wardsData?.length || 0} Wards Loaded
-                </span>
-              </div>
-              <div className="w-full h-48 rounded-xl bg-black/50 border border-white/5 relative overflow-hidden mb-4">
-                <MapContainer center={[9.96, 76.31]} zoom={11} style={{ height: '100%', width: '100%', backgroundColor: '#02050b' }} zoomControl={false}>
-                  <TileLayer
-                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?api_key=cb1_2p2f_1_9616035ff449cee0877c0c56"
-                    attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-                  />
-                  {wardsData?.map(w => {
-                     const color = getRiskColor(w.risk?.today?.overall || 'LOW');
-                     const hex = color.includes('red') ? '#ef4444' : color.includes('orange') ? '#f97316' : color.includes('amber') || color.includes('yellow') ? '#facc15' : '#4ade80';
-                     return <CircleMarker key={w.ward_no} center={[w.latitude, w.longitude]} radius={6} pathOptions={{ color: hex, fillColor: hex, fillOpacity: 0.6, stroke: false }} />;
-                  })}
-                </MapContainer>
-              </div>
-              
-              <div className="overflow-x-auto overflow-y-auto max-h-64 rounded-lg border border-white/5">
-                <table className="w-full text-left text-[10px] text-neutral-300">
-                  <thead className="text-[9px] uppercase bg-black/40 text-neutral-400 sticky top-0 z-10">
-                    <tr>
-                      <th className="px-2 py-2">Ward No</th>
-                      <th className="px-2 py-2">Ward Name</th>
-                      <th className="px-2 py-2">Temperature</th>
-                      <th className="px-2 py-2">Feels Like</th>
-                      <th className="px-2 py-2">Humidity</th>
-                      <th className="px-2 py-2">Wind</th>
-                      <th className="px-2 py-2">Rain</th>
-                      <th className="px-2 py-2">Weather</th>
-                      <th className="px-2 py-2">WBGT</th>
-                      <th className="px-2 py-2">UTCI</th>
-                      <th className="px-2 py-2">Heat Index</th>
-                      <th className="px-2 py-2">Risk</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {wardsData?.map(w => (
-                      <tr key={w.ward_no} className="border-b border-white/5 hover:bg-white/5">
-                        <td className="px-2 py-2 font-bold text-white whitespace-nowrap">{w.ward_no}</td>
-                        <td className="px-2 py-2 font-bold text-white whitespace-nowrap">{w.ward_name}</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.temperature_max_c} °C</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.apparent_temperature_mean_c} °C</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.humidity_mean_percent}%</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.wind_speed_mean_kmh} km/h</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.precipitation_sum_mm} mm</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.weather?.today?.weather_condition}</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.heat_stress?.today?.wbgt?.prediction_c?.toFixed(1) ?? '--'}</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.heat_stress?.today?.utci?.prediction_c?.toFixed(1) ?? '--'}</td>
-                        <td className="px-2 py-2 whitespace-nowrap">{w.heat_stress?.today?.heat_index?.prediction_c !== null ? w.heat_stress?.today?.heat_index?.prediction_c?.toFixed(1) : 'N/A'}</td>
-                        <td className="px-2 py-2 whitespace-nowrap"><span className={`px-1.5 py-0.5 rounded font-bold border ${getRiskColor(w.risk?.today?.overall)}`}>{w.risk?.today?.overall?.replace('_',' ') || 'UNKNOWN'}</span></td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
             {/* THERMAL PHYSICS ENGINE */}
             <div className="bg-[#121827]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
               <div className="flex items-center gap-2 mb-4 text-emerald-400">
