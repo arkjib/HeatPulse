@@ -5,7 +5,7 @@ import {
   Wind, Sun, CloudRain, CheckCircle, AlertTriangle, AlertOctagon, Info, Layers, ShieldAlert
 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { MapContainer, TileLayer, CircleMarker } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import LandingPage from './pages/LandingPage';
 
@@ -14,6 +14,7 @@ export default function App() {
   const [currentData, setCurrentData] = useState(null);
   const [seqData, setSeqData] = useState(null);
   const [wardsData, setWardsData] = useState([]);
+  const [geoJsonData, setGeoJsonData] = useState(null);
   const [riskData, setRiskData] = useState(null);
   const [selectedHorizon, setSelectedHorizon] = useState(72);
   const [isLoading, setIsLoading] = useState(true);
