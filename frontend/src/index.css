@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-risk-low: #22c55e;
+  --color-risk-caution: #eab308;
+  --color-risk-moderate: #f97316;
+  --color-risk-strong: #ef4444;
+  --color-risk-extreme: #7f1d1d;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}

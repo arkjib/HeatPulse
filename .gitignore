@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+venv_test/
+venv_wbgt_ref/
+dist/
+build/
+.DS_Store
+wards_response.json

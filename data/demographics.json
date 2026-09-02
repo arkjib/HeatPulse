@@ -1,0 +1,200 @@
+[
+  {
+    "ward_id":"W-04",
+    "ward_name":"Fort Kochi",
+    "zone_type":"Coastal \/ heritage",
+    "population":19238,
+    "pop_density_per_ha":188.9,
+    "elderly_share_pct":18.0,
+    "outdoor_worker_share_pct":32.9,
+    "healthcare_access_index":37.8,
+    "households":4844
+  },
+  {
+    "ward_id":"W-07",
+    "ward_name":"Mattancherry",
+    "zone_type":"Dense mixed",
+    "population":57135,
+    "pop_density_per_ha":333.5,
+    "elderly_share_pct":13.3,
+    "outdoor_worker_share_pct":40.5,
+    "healthcare_access_index":40.4,
+    "households":14097
+  },
+  {
+    "ward_id":"W-37",
+    "ward_name":"Willingdon Island",
+    "zone_type":"Port \/ industrial",
+    "population":12139,
+    "pop_density_per_ha":126.1,
+    "elderly_share_pct":13.2,
+    "outdoor_worker_share_pct":65.7,
+    "healthcare_access_index":40.5,
+    "households":2895
+  },
+  {
+    "ward_id":"W-12",
+    "ward_name":"Ernakulam South",
+    "zone_type":"Commercial \/ transit",
+    "population":54719,
+    "pop_density_per_ha":267.1,
+    "elderly_share_pct":17.2,
+    "outdoor_worker_share_pct":40.1,
+    "healthcare_access_index":61.1,
+    "households":12468
+  },
+  {
+    "ward_id":"W-15",
+    "ward_name":"Kaloor",
+    "zone_type":"Commercial \/ transit",
+    "population":51149,
+    "pop_density_per_ha":242.2,
+    "elderly_share_pct":14.9,
+    "outdoor_worker_share_pct":51.5,
+    "healthcare_access_index":47.0,
+    "households":12278
+  },
+  {
+    "ward_id":"W-18",
+    "ward_name":"Vyttila",
+    "zone_type":"Transit hub",
+    "population":35881,
+    "pop_density_per_ha":259.3,
+    "elderly_share_pct":14.8,
+    "outdoor_worker_share_pct":55.5,
+    "healthcare_access_index":55.9,
+    "households":8393
+  },
+  {
+    "ward_id":"W-33",
+    "ward_name":"Thevara",
+    "zone_type":"Residential",
+    "population":26201,
+    "pop_density_per_ha":154.7,
+    "elderly_share_pct":16.2,
+    "outdoor_worker_share_pct":27.5,
+    "healthcare_access_index":72.7,
+    "households":6309
+  },
+  {
+    "ward_id":"W-21",
+    "ward_name":"Palarivattom",
+    "zone_type":"Commercial \/ transit",
+    "population":46300,
+    "pop_density_per_ha":276.4,
+    "elderly_share_pct":14.2,
+    "outdoor_worker_share_pct":43.4,
+    "healthcare_access_index":50.8,
+    "households":11704
+  },
+  {
+    "ward_id":"W-25",
+    "ward_name":"Edappally",
+    "zone_type":"Commercial \/ transit",
+    "population":47628,
+    "pop_density_per_ha":289.3,
+    "elderly_share_pct":15.5,
+    "outdoor_worker_share_pct":46.8,
+    "healthcare_access_index":61.7,
+    "households":11866
+  },
+  {
+    "ward_id":"W-29",
+    "ward_name":"Kakkanad",
+    "zone_type":"IT \/ commercial",
+    "population":20820,
+    "pop_density_per_ha":122.6,
+    "elderly_share_pct":10.1,
+    "outdoor_worker_share_pct":24.4,
+    "healthcare_access_index":78.0,
+    "households":4812
+  },
+  {
+    "ward_id":"W-41",
+    "ward_name":"Tripunithura",
+    "zone_type":"Residential",
+    "population":22803,
+    "pop_density_per_ha":182.0,
+    "elderly_share_pct":16.0,
+    "outdoor_worker_share_pct":25.5,
+    "healthcare_access_index":60.4,
+    "households":5014
+  },
+  {
+    "ward_id":"W-45",
+    "ward_name":"Cheranalloor",
+    "zone_type":"Peri-urban \/ low-rise",
+    "population":14637,
+    "pop_density_per_ha":87.8,
+    "elderly_share_pct":16.7,
+    "outdoor_worker_share_pct":36.0,
+    "healthcare_access_index":46.6,
+    "households":3605
+  },
+  {
+    "ward_id":"W-49",
+    "ward_name":"Kalamassery",
+    "zone_type":"Industrial",
+    "population":11262,
+    "pop_density_per_ha":148.3,
+    "elderly_share_pct":13.6,
+    "outdoor_worker_share_pct":51.0,
+    "healthcare_access_index":46.4,
+    "households":2621
+  },
+  {
+    "ward_id":"W-09",
+    "ward_name":"Panampilly Nagar",
+    "zone_type":"Residential (affluent)",
+    "population":17881,
+    "pop_density_per_ha":105.7,
+    "elderly_share_pct":18.6,
+    "outdoor_worker_share_pct":13.2,
+    "healthcare_access_index":90.5,
+    "households":4236
+  },
+  {
+    "ward_id":"W-11",
+    "ward_name":"Elamkulam",
+    "zone_type":"Residential",
+    "population":24339,
+    "pop_density_per_ha":158.4,
+    "elderly_share_pct":18.0,
+    "outdoor_worker_share_pct":26.5,
+    "healthcare_access_index":69.9,
+    "households":5795
+  },
+  {
+    "ward_id":"W-05",
+    "ward_name":"Thoppumpady",
+    "zone_type":"Coastal \/ heritage",
+    "population":18780,
+    "pop_density_per_ha":212.0,
+    "elderly_share_pct":15.9,
+    "outdoor_worker_share_pct":42.0,
+    "healthcare_access_index":45.2,
+    "households":4738
+  },
+  {
+    "ward_id":"W-30",
+    "ward_name":"Thrikkakara",
+    "zone_type":"Peri-urban \/ IT",
+    "population":13385,
+    "pop_density_per_ha":123.1,
+    "elderly_share_pct":10.6,
+    "outdoor_worker_share_pct":21.6,
+    "healthcare_access_index":66.6,
+    "households":3100
+  },
+  {
+    "ward_id":"W-40",
+    "ward_name":"Chittoor",
+    "zone_type":"Riverside \/ dense",
+    "population":41304,
+    "pop_density_per_ha":286.7,
+    "elderly_share_pct":18.0,
+    "outdoor_worker_share_pct":44.3,
+    "healthcare_access_index":57.5,
+    "households":9173
+  }
+]
