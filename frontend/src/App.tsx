@@ -7,8 +7,10 @@ import {
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { MapContainer, TileLayer, CircleMarker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import LandingPage from './pages/LandingPage';
 
 export default function App() {
+  const [showLanding, setShowLanding] = useState(true);
   const [currentData, setCurrentData] = useState(null);
   const [seqData, setSeqData] = useState(null);
   const [wardsData, setWardsData] = useState([]);
@@ -238,6 +240,10 @@ export default function App() {
      healthImpact = "Heat cramps and fatigue possible with physical exertion or prolonged exposure.";
      vulnerablePop = "Heavy laborers, athletes, individuals with comorbidities.";
      recommendations = "Increase fluid intake. Wear lightweight clothing. Monitor vulnerable groups.";
+  }
+
+  if (showLanding) {
+    return <LandingPage onEnter={() => setShowLanding(false)} />;
   }
 
   return (

@@ -1,0 +1,601 @@
+.landing-wrapper {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #110000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.landing-wrapper *,
+.landing-wrapper *::before,
+.landing-wrapper *::after {
+    box-sizing: border-box;
+}
+
+.main-container {
+    position: relative;
+    width: 4073px;
+    height: 4922px;
+    margin: 0;
+    background: #110000;
+    overflow: hidden;
+    transform-origin: top left;
+    will-change: transform;
+}
+
+.heatpulse {
+    position: relative;
+    width: 368px;
+    height: 63px;
+    margin: 174px 0 0 1852.211px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 65px;
+    font-weight: 600;
+    line-height: 63px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 7;
+}
+
+.heat {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 65px;
+    font-weight: 600;
+    line-height: 78px;
+    text-align: center;
+}
+
+.pulse {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 65px;
+    font-weight: 275;
+    line-height: 78px;
+    text-align: center;
+}
+
+.know-the-heat {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 2087px;
+    height: 336px;
+    margin: 148px 0 0 992.211px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 172px;
+    font-weight: 600;
+    line-height: 167.872px;
+    text-align: center;
+    z-index: 3;
+    column-gap: 0.25em;
+    row-gap: 0px;
+}
+
+.blur-word {
+    display: inline-block;
+    background: linear-gradient(180deg, #ffffff, #585656);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(-30px);
+    animation: blurWordFromTop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: filter, opacity, transform;
+}
+
+@keyframes blurWordFromTop {
+    0% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 0.87;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+.intelligent-heat-risk {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 1338px;
+    height: 102px;
+    margin: 44px 0 0 1329.211px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 34.16px;
+    text-align: center;
+    z-index: 6;
+}
+
+.rectangle {
+    position: relative;
+    width: 472px;
+    height: 104px;
+    margin: 90px 0 0 1800.211px;
+    background: #a80000;
+    z-index: 9;
+    border-radius: 52px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.rectangle:hover {
+    transform: scale(1.05);
+    background: #d10000;
+}
+
+.explore-risk-map {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 287px;
+    height: 34px;
+    top: 34px;
+    left: 65px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 34px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 11;
+}
+
+.arrow {
+    position: absolute;
+    width: 24px;
+    height: 30px;
+    top: 37px;
+    left: 392px;
+    background: url(https://static.codia.ai/image/2026-09-01/Oj4vyj4nBu.png) no-repeat center;
+    background-size: cover;
+    z-index: 10;
+}
+
+.frame {
+    position: relative;
+    width: 2720px;
+    height: 1410px;
+    margin: 109px 0 0 693px;
+    background: url(https://static.codia.ai/image/2026-09-01/4ihXrjf1t3.png) no-repeat center;
+    background-size: cover;
+    z-index: 4;
+    border-radius: 55px;
+}
+
+.heat-pulse {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 835px;
+    height: 84px;
+    margin: 387px 0 0 350px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 86px;
+    font-weight: 600;
+    line-height: 83.936px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 33;
+}
+
+.flex-row-ada {
+    position: relative;
+    width: 4783px;
+    height: 3208px;
+    margin: 82px 0 0 -1171px;
+    z-index: 35;
+}
+
+.ellipse {
+    position: absolute;
+    width: 3208px;
+    height: 3208px;
+    top: 0;
+    left: 0;
+    background: url(https://static.codia.ai/image/2026-09-01/WF7EJBYsK8.png) no-repeat center;
+    background-size: cover;
+    filter: blur(84.5px);
+    z-index: 34;
+    border-radius: 50%;
+}
+
+.weather-data {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 61px;
+    top: 10px;
+    left: 3798px;
+    color: #ad0007;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 13;
+}
+
+.heat-risk-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 1836px;
+    height: 507px;
+    top: 18px;
+    left: 1519px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61.488px;
+    text-align: left;
+    opacity: 0.54;
+    z-index: 32;
+}
+
+.ellipse-1 {
+    position: absolute;
+    width: 34px;
+    height: 33px;
+    top: 24px;
+    left: 3696px;
+    background: url(https://static.codia.ai/image/2026-09-01/3w8aNUDmqb.png) no-repeat center;
+    background-size: cover;
+    z-index: 19;
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 1375px;
+    top: 57px;
+    left: 3713px;
+    background: url(https://static.codia.ai/image/2026-09-01/JkG5QAFW9n.png) no-repeat center;
+    background-size: cover;
+    z-index: 31;
+}
+
+.temp-humidity-wind {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 984px;
+    height: 108px;
+    top: 115px;
+    left: 3798px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 53.68px;
+    text-align: left;
+    z-index: 16;
+}
+
+.thermal-stress-analysis {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 61px;
+    top: 285px;
+    left: 3799px;
+    color: #ad0007;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 14;
+}
+
+.ellipse-2 {
+    position: absolute;
+    width: 34px;
+    height: 33px;
+    top: 299px;
+    left: 3696px;
+    background: url(https://static.codia.ai/image/2026-09-01/tAD4qSpqVz.png) no-repeat center;
+    background-size: cover;
+    z-index: 20;
+}
+
+.wbgt-utci-heat {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 54px;
+    top: 417px;
+    left: 3798px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 53.68px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 17;
+}
+
+.ml-forecasting {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 61px;
+    top: 525px;
+    left: 3798px;
+    color: #ad0007;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 15;
+}
+
+.ellipse-3 {
+    position: absolute;
+    width: 34px;
+    height: 33px;
+    top: 539px;
+    left: 3695px;
+    background: url(https://static.codia.ai/image/2026-09-01/BnQehGarpP.png) no-repeat center;
+    background-size: cover;
+    z-index: 21;
+}
+
+.gemini-generated-image {
+    position: absolute;
+    width: 2225px;
+    height: 1484px;
+    top: 555px;
+    left: 944px;
+    background: url(https://static.codia.ai/image/2026-09-01/WToJZ2hUYA.png) no-repeat center;
+    background-size: cover;
+    z-index: 35;
+}
+
+.predicts-thermal-stress {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 984px;
+    height: 108px;
+    top: 630px;
+    left: 3798px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 53.68px;
+    text-align: left;
+    z-index: 18;
+}
+
+.human-vulnerability {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 61px;
+    top: 792px;
+    left: 3799px;
+    color: #ad0007;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 22;
+}
+
+.ellipse-4 {
+    position: absolute;
+    width: 34px;
+    height: 33px;
+    top: 806px;
+    left: 3696px;
+    background: url(https://static.codia.ai/image/2026-09-01/Pe28Ch7FH3.png) no-repeat center;
+    background-size: cover;
+    z-index: 24;
+}
+
+.vulnerable-population {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 984px;
+    height: 162px;
+    top: 897px;
+    left: 3799px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 53.68px;
+    text-align: left;
+    z-index: 23;
+}
+
+.gis-risk-mapping {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 61px;
+    top: 1135px;
+    left: 3799px;
+    color: #ad0007;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 25;
+}
+
+.ellipse-5 {
+    position: absolute;
+    width: 34px;
+    height: 33px;
+    top: 1149px;
+    left: 3696px;
+    background: url(https://static.codia.ai/image/2026-09-01/cb9DXmAtXv.png) no-repeat center;
+    background-size: cover;
+    z-index: 27;
+}
+
+.high-risk-identification {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 984px;
+    height: 108px;
+    top: 1240px;
+    left: 3799px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 53.68px;
+    text-align: left;
+    z-index: 26;
+}
+
+.action-alerts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 61px;
+    top: 1418px;
+    left: 3798px;
+    color: #ad0007;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 63px;
+    font-weight: 300;
+    line-height: 61px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 28;
+}
+
+.ellipse-6 {
+    position: absolute;
+    width: 34px;
+    height: 33px;
+    top: 1432px;
+    left: 3695px;
+    background: url(https://static.codia.ai/image/2026-09-01/SauqK0oPYJ.png) no-repeat center;
+    background-size: cover;
+    z-index: 30;
+}
+
+.cooling-centres-water {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 984px;
+    height: 162px;
+    top: 1523px;
+    left: 3798px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 300;
+    line-height: 53.68px;
+    text-align: left;
+    z-index: 29;
+}
+
+.beautiful-shining-stars {
+    position: absolute;
+    width: 4073px;
+    height: 2290px;
+    top: 0;
+    left: 0;
+    background: url(https://static.codia.ai/image/2026-09-01/1y6FGETWwT.png) no-repeat center;
+    background-size: cover;
+}
+
+.rectangle-7 {
+    position: absolute;
+    width: 4368px;
+    height: 828px;
+    top: 0;
+    left: -148px;
+    background: url(https://static.codia.ai/image/2026-09-01/Yp3Q1hFiTS.png) no-repeat center;
+    background-size: cover;
+    z-index: 2;
+}
+
+.firefly {
+    position: absolute;
+    width: 4362px;
+    height: 2393px;
+    top: 590px;
+    left: -90.789px;
+    background: url(https://static.codia.ai/image/2026-09-01/jx1okiX6CA.png) no-repeat center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.wild-grass-hills {
+    position: absolute;
+    width: 4106px;
+    height: 1732px;
+    top: 1009px;
+    left: 0.21px;
+    background: url(https://static.codia.ai/image/2026-09-01/QDV2hp7MHF.png) no-repeat center;
+    background-size: cover;
+    filter: brightness(0.5);
+    z-index: 5;
+}
+
+.rectangle-8 {
+    position: absolute;
+    width: 4221px;
+    height: 4707px;
+    top: 1527px;
+    left: -111px;
+    background: url(https://static.codia.ai/image/2026-09-01/OS7Y7jzXSZ.png) no-repeat center;
+    background-size: cover;
+    z-index: 12;
+}
