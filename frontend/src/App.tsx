@@ -26,22 +26,26 @@ export default function App() {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const [resCurrent, resSeq, resWards, resRisk] = await Promise.all([
+      const [resCurrent, resSeq, resRisk] = await Promise.all([
         fetch(`/api/v1/thermal/current?lat=${LAT}&lon=${LON}`),
         fetch(`/api/v1/forecast/sequence?latitude=${LAT}&longitude=${LON}`),
-        fetch(`/api/v1/wards/weather`),
         fetch(`/api/v1/risk/forecast?lat=${LAT}&lon=${LON}`)
       ]);
       
       const curr = await resCurrent.json();
       const seq = await resSeq.json();
-      const wrd = await resWards.json();
       const risk = await resRisk.json();
       
       setCurrentData(curr);
       setSeqData(seq);
-      setWardsData(wrd?.wards || []);
       setRiskData(risk);
+      
+      // Fetch wards in background
+      fetch(`/api/v1/wards/weather`)
+        .then(res => res.json())
+        .then(wrd => setWardsData(wrd?.wards || []))
+        .catch(e => console.error(e));
+        
       setLastUpdated(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
     } catch (e) {
       console.error("Failed to fetch data", e);
