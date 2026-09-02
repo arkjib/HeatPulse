@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 class WeatherClient:
     BASE_URL = "https://api.open-meteo.com/v1/forecast"
     _cache = {}
+    _circuit_breaker_until = 0
 
     async def fetch_weather_data(self, lat: float, lon: float, days: int = 5) -> Dict[str, Any]:
         cache_key = f"{lat}_{lon}_{days}"
@@ -19,6 +20,10 @@ class WeatherClient:
             entry = self._cache[cache_key]
             if now - entry['timestamp'] < 3600:
                 return entry['data']
+
+        # Circuit breaker: if we hit a rate limit/network error recently, return fallback immediately
+        if now < type(self)._circuit_breaker_until:
+            return self._generate_fallback(lat, lon, days)
 
         params = {
             "latitude": lat,
@@ -31,7 +36,7 @@ class WeatherClient:
         
         async with httpx.AsyncClient() as client:
             try:
-                response = await client.get(self.BASE_URL, params=params, timeout=10.0)
+                response = await client.get(self.BASE_URL, params=params, timeout=5.0)
                 response.raise_for_status()
                 data = response.json()
                 
@@ -41,12 +46,14 @@ class WeatherClient:
                 
             except httpx.HTTPStatusError as e:
                 logger.error(f"HTTP error occurred while fetching weather data: {e}")
+                type(self)._circuit_breaker_until = now + 600  # Trip breaker for 10 minutes
                 if cache_key in self._cache:
                     return self._cache[cache_key]['data']
                 return self._generate_fallback(lat, lon, days)
                 
             except httpx.RequestError as e:
                 logger.error(f"Network error occurred while fetching weather data: {e}")
+                type(self)._circuit_breaker_until = now + 600  # Trip breaker for 10 minutes
                 if cache_key in self._cache:
                     return self._cache[cache_key]['data']
                 return self._generate_fallback(lat, lon, days)
